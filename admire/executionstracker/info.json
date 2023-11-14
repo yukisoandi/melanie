@@ -1,0 +1,11 @@
+{
+  "author": ["monty"],
+  "name": "stats",
+  "disabled": false,
+  "short": "stats",
+  "description": "stats",
+  "tags": [""],
+  "hidden": false,
+  "min_bot_version": "3.4.0",
+  "end_user_data_statement": "stats"
+}

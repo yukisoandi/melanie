@@ -1,0 +1,9 @@
+{
+  "author": ["monty"],
+  "description": "Fuses ``;warnings``,``;listflags``,``;read``,``;userinfo`` and ;names``",
+  "hidden": false,
+  "install_msg": "Thank you for installing check. Make sure the `Warnings` and `Mod` cogs are loaded.",
+  "short": "Mod-Check a user",
+  "tags": ["members", "mod", "moderation", "warnings", "checks", "tools"],
+  "end_user_data_statement": "This cog does not store end user data."
+}

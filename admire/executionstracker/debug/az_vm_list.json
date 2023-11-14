@@ -1,0 +1,560 @@
+[
+  {
+    "additionalCapabilities": null,
+    "applicationProfile": null,
+    "availabilitySet": null,
+    "billingProfile": null,
+    "capacityReservation": null,
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": true,
+        "storageUri": "https://melaniediagbucket.blob.core.windows.net/"
+      }
+    },
+    "evictionPolicy": null,
+    "extendedLocation": null,
+    "extensionsTimeBudget": null,
+    "fqdns": "",
+    "hardwareProfile": {
+      "vmSize": "Standard_E8bs_v5",
+      "vmSizeProperties": null
+    },
+    "host": null,
+    "hostGroup": null,
+    "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/COREBOT/providers/Microsoft.Compute/virtualMachines/melanie-machine2",
+    "identity": null,
+    "licenseType": null,
+    "location": "eastus2",
+    "macAddresses": "60-45-BD-7A-A9-10",
+    "name": "melanie-machine2",
+    "networkProfile": {
+      "networkApiVersion": null,
+      "networkInterfaceConfigurations": null,
+      "networkInterfaces": [
+        {
+          "deleteOption": "Detach",
+          "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/corebot/providers/Microsoft.Network/networkInterfaces/melanie-machine2461",
+          "primary": null,
+          "resourceGroup": "corebot"
+        }
+      ]
+    },
+    "osProfile": null,
+    "plan": null,
+    "platformFaultDomain": null,
+    "powerState": "VM running",
+    "priority": null,
+    "privateIps": "10.0.0.5,10.0.0.9",
+    "provisioningState": "Succeeded",
+    "proximityPlacementGroup": null,
+    "publicIps": "20.119.177.89,20.242.14.135",
+    "resourceGroup": "COREBOT",
+    "resources": [
+      {
+        "autoUpgradeMinorVersion": true,
+        "enableAutomaticUpgrade": null,
+        "forceUpdateTag": null,
+        "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/COREBOT/providers/Microsoft.Compute/virtualMachines/melanie-machine2/extensions/DependencyAgentLinux",
+        "instanceView": null,
+        "location": "eastus2",
+        "name": "DependencyAgentLinux",
+        "protectedSettings": null,
+        "protectedSettingsFromKeyVault": null,
+        "provisioningState": "Succeeded",
+        "publisher": "Microsoft.Azure.Monitoring.DependencyAgent",
+        "resourceGroup": "COREBOT",
+        "settings": null,
+        "suppressFailures": null,
+        "tags": null,
+        "type": "Microsoft.Compute/virtualMachines/extensions",
+        "typeHandlerVersion": "9.10",
+        "typePropertiesType": "DependencyAgentLinux"
+      },
+      {
+        "autoUpgradeMinorVersion": true,
+        "enableAutomaticUpgrade": null,
+        "forceUpdateTag": null,
+        "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/COREBOT/providers/Microsoft.Compute/virtualMachines/melanie-machine2/extensions/OMSAgentForLinux",
+        "instanceView": null,
+        "location": "eastus2",
+        "name": "OMSAgentForLinux",
+        "protectedSettings": null,
+        "protectedSettingsFromKeyVault": null,
+        "provisioningState": "Failed",
+        "publisher": "Microsoft.EnterpriseCloud.Monitoring",
+        "resourceGroup": "COREBOT",
+        "settings": {
+          "azureResourceId": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/COREBOT/providers/Microsoft.Compute/virtualMachines/melanie-machine2",
+          "stopOnMultipleConnections": "true",
+          "workspaceId": "4ea0f635-e6a1-440d-aded-10d07c797838"
+        },
+        "suppressFailures": null,
+        "tags": null,
+        "type": "Microsoft.Compute/virtualMachines/extensions",
+        "typeHandlerVersion": "1.7",
+        "typePropertiesType": "OmsAgentForLinux"
+      }
+    ],
+    "scheduledEventsProfile": null,
+    "securityProfile": null,
+    "storageProfile": {
+      "dataDisks": [
+        {
+          "caching": "None",
+          "createOption": "Attach",
+          "deleteOption": "Detach",
+          "detachOption": null,
+          "diskIopsReadWrite": null,
+          "diskMBpsReadWrite": null,
+          "diskSizeGb": 512,
+          "image": null,
+          "lun": 0,
+          "managedDisk": {
+            "diskEncryptionSet": null,
+            "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/COREBOT/providers/Microsoft.Compute/disks/cache_disk1",
+            "resourceGroup": "COREBOT",
+            "securityProfile": null,
+            "storageAccountType": "Premium_LRS"
+          },
+          "name": "cache_disk1",
+          "toBeDetached": false,
+          "vhd": null,
+          "writeAcceleratorEnabled": false
+        },
+        {
+          "caching": "None",
+          "createOption": "Attach",
+          "deleteOption": "Detach",
+          "detachOption": null,
+          "diskIopsReadWrite": null,
+          "diskMBpsReadWrite": null,
+          "diskSizeGb": 512,
+          "image": null,
+          "lun": 1,
+          "managedDisk": {
+            "diskEncryptionSet": null,
+            "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/COREBOT/providers/Microsoft.Compute/disks/cache_disk2",
+            "resourceGroup": "COREBOT",
+            "securityProfile": null,
+            "storageAccountType": "Premium_LRS"
+          },
+          "name": "cache_disk2",
+          "toBeDetached": false,
+          "vhd": null,
+          "writeAcceleratorEnabled": false
+        }
+      ],
+      "imageReference": null,
+      "osDisk": {
+        "caching": "None",
+        "createOption": "Attach",
+        "deleteOption": "Detach",
+        "diffDiskSettings": null,
+        "diskSizeGb": 512,
+        "encryptionSettings": null,
+        "image": null,
+        "managedDisk": {
+          "diskEncryptionSet": null,
+          "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/bu/providers/Microsoft.Compute/disks/mdtmp",
+          "resourceGroup": "bu",
+          "securityProfile": null,
+          "storageAccountType": "Premium_LRS"
+        },
+        "name": "mdtmp",
+        "osType": "Linux",
+        "vhd": null,
+        "writeAcceleratorEnabled": null
+      }
+    },
+    "tags": null,
+    "timeCreated": "2022-05-10T10:01:13.507659+00:00",
+    "type": "Microsoft.Compute/virtualMachines",
+    "userData": null,
+    "virtualMachineScaleSet": null,
+    "vmId": "714291c3-5f1c-4b71-ac69-01dc6fcbabab",
+    "zones": null
+  },
+  {
+    "additionalCapabilities": null,
+    "applicationProfile": null,
+    "availabilitySet": null,
+    "billingProfile": null,
+    "capacityReservation": null,
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": true,
+        "storageUri": null
+      }
+    },
+    "evictionPolicy": null,
+    "extendedLocation": null,
+    "extensionsTimeBudget": null,
+    "fqdns": "",
+    "hardwareProfile": {
+      "vmSize": "Standard_D2s_v4",
+      "vmSizeProperties": null
+    },
+    "host": null,
+    "hostGroup": null,
+    "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/BLEEDPROXY1/providers/Microsoft.Compute/virtualMachines/bleedproxy",
+    "identity": null,
+    "licenseType": null,
+    "location": "eastus2",
+    "macAddresses": "60-45-BD-82-F5-A5",
+    "name": "bleedproxy",
+    "networkProfile": {
+      "networkApiVersion": null,
+      "networkInterfaceConfigurations": null,
+      "networkInterfaces": [
+        {
+          "deleteOption": "Delete",
+          "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/bleedproxy1/providers/Microsoft.Network/networkInterfaces/bleedproxy721",
+          "primary": null,
+          "resourceGroup": "bleedproxy1"
+        }
+      ]
+    },
+    "osProfile": {
+      "adminPassword": null,
+      "adminUsername": "melanie",
+      "allowExtensionOperations": true,
+      "computerName": "bleedproxy",
+      "customData": null,
+      "linuxConfiguration": {
+        "disablePasswordAuthentication": true,
+        "enableVMAgentPlatformUpdates": false,
+        "patchSettings": {
+          "assessmentMode": "ImageDefault",
+          "automaticByPlatformSettings": null,
+          "patchMode": "ImageDefault"
+        },
+        "provisionVmAgent": true,
+        "ssh": {
+          "publicKeys": [
+            {
+              "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAEAQDHh2WTDBvV2gz39qraqx+NuA3coJdlVpd25hcS4/bZQ0DAdCkcP7tqiih0GsayY9hgEjkb8jvmTpGnbnza+juuDbDXWFsIoIOkVGiBCtRJaIyjnrahLMMXbKTH0mzLrbZzDfzIz8l26qaiUa2yNPRJPol3PNcBCvKs3Gi3FL0Ruq8nlGcXslRSc2QIGtesLlL4Oq8Cuk6b8AVh44XbnwlffwSNAZfFoB8hJijxJqdT9agSLHF4nfmjI3Q1G7nrbosPlw6DlZkwVILociQrFNWVBhuTQ83BqCFta8zvthcF4nspaYyTeaYy/JO6VJ1Y5EVFwPANNvusTbLLrkFBIEVyhEg1TKK2N/KHBe86LNZvnCHiToyrR++5mAu47RPm3bYou0k4yFf+W/7t7k7ZjEAimWFDVy+2SVfgMOOkbHhkmZk9YxHGl3lUkLAPHYq4PGlnViGnysmMIpBvNs+rPeOaq/csUKm5V64S6q/1XKoYDCdDxdnhJ3Vo2sgh2eqpVJXsgF94x/2AIXrsvK02z9un+yfQTgfCR4rcYZDeyjEYapd1IIpLqXuFLeMwT76vLuYJEe/gGgeRoTxzEMcjHw8zfgkejIAPcfmmQOcUGeWAIDrtZiSiCj90B9O+EtWAozY44TbwW/iqDT8RPPjlSscYLGQSii4QDrtysWeSaEq6sGOLx8sv2fJy5yI4gp0ZeX+RCtKVCPDy1jqJ7pL0NeWCd8OwZKHF3F7dm/to99Kr8lf8vf9Bn0CY9CGF0YonzyQ+YyRFZPHOnb/S1hPUwD7a7+RCA8CJf69bd1HHJX+SHX6lWvOcw+VHt1SjMUt1J1qorIXK6QBxShgZjp4fZ9aVNF/OG2MUFNfPIaDkhB4RIjcf3nXLq9AKFGW2dHMq6OzueX1FCIoGpn565i/aKnJnED3am0KyWuazGZph3zzYoJCjuVMm5p2OgNczWsg6N2gKQjvGtY7XSNeujREt9cQ2BomrHJSIb9rRxRCKj+7K6uMEP0DPNTn4pmJYEtV4YJB9Hzh4IQ7w5Hw4vHXD1Dpt6+Fu2Bor2ZhrQFvWO3XTrX4uzA9uyBBWBxn0W9iTXEe9pZMJgKKnDqVSRBekx34TjPKN7rl8oxzDtSO3003El3VHxofh8T7JQ0b4H/sjCaU3c6WhmdGXLJx8FDdmhwKR1wmROJtpe84sLjUxF+i+goLVJhbUj+o61TGLNONCUoRduINtYr/IIa4AVoQ/HUlCxxlWAK8wsSzJ1QwOMbjYABx5gdnM7nKOpKNZmQ/PHTkQAmIBSOSBsrBelVpVD6TETQN+5C8eqDww862pxF5q1iaJbP2D7X0RXj5Epq+cSHNxA3PbgqMjh8V2AO51dv75 m@montel.pro",
+              "path": "/home/melanie/.ssh/authorized_keys"
+            }
+          ]
+        }
+      },
+      "requireGuestProvisionSignal": true,
+      "secrets": [],
+      "windowsConfiguration": null
+    },
+    "plan": null,
+    "platformFaultDomain": null,
+    "powerState": "VM deallocated",
+    "priority": null,
+    "privateIps": "10.1.0.4",
+    "provisioningState": "Succeeded",
+    "proximityPlacementGroup": null,
+    "publicIps": "20.94.95.115",
+    "resourceGroup": "BLEEDPROXY1",
+    "resources": null,
+    "scheduledEventsProfile": null,
+    "securityProfile": null,
+    "storageProfile": {
+      "dataDisks": [],
+      "imageReference": {
+        "communityGalleryImageId": null,
+        "exactVersion": "20.04.202206150",
+        "id": null,
+        "offer": "0001-com-ubuntu-server-focal",
+        "publisher": "canonical",
+        "sharedGalleryImageId": null,
+        "sku": "20_04-lts-gen2",
+        "version": "latest"
+      },
+      "osDisk": {
+        "caching": "ReadWrite",
+        "createOption": "FromImage",
+        "deleteOption": "Delete",
+        "diffDiskSettings": null,
+        "diskSizeGb": null,
+        "encryptionSettings": null,
+        "image": null,
+        "managedDisk": {
+          "diskEncryptionSet": null,
+          "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/bleedproxy1/providers/Microsoft.Compute/disks/bleedproxy_OsDisk_1_1a8b361f2432450d8b82380febf54f66",
+          "resourceGroup": "bleedproxy1",
+          "securityProfile": null,
+          "storageAccountType": null
+        },
+        "name": "bleedproxy_OsDisk_1_1a8b361f2432450d8b82380febf54f66",
+        "osType": "Linux",
+        "vhd": null,
+        "writeAcceleratorEnabled": null
+      }
+    },
+    "tags": null,
+    "timeCreated": "2022-06-22T03:19:26.656426+00:00",
+    "type": "Microsoft.Compute/virtualMachines",
+    "userData": null,
+    "virtualMachineScaleSet": null,
+    "vmId": "14220a5e-237b-4d2d-aef2-4ca2eb4297b4",
+    "zones": null
+  },
+  {
+    "additionalCapabilities": null,
+    "applicationProfile": null,
+    "availabilitySet": null,
+    "billingProfile": null,
+    "capacityReservation": null,
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": true,
+        "storageUri": null
+      }
+    },
+    "evictionPolicy": null,
+    "extendedLocation": null,
+    "extensionsTimeBudget": null,
+    "fqdns": "",
+    "hardwareProfile": {
+      "vmSize": "Standard_D4as_v4",
+      "vmSizeProperties": null
+    },
+    "host": null,
+    "hostGroup": null,
+    "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/COREBOT/providers/Microsoft.Compute/virtualMachines/helpers-eastus2",
+    "identity": null,
+    "licenseType": "RHEL_BYOS",
+    "location": "eastus2",
+    "macAddresses": "60-45-BD-82-A6-91",
+    "name": "helpers-eastus2",
+    "networkProfile": {
+      "networkApiVersion": null,
+      "networkInterfaceConfigurations": null,
+      "networkInterfaces": [
+        {
+          "deleteOption": "Detach",
+          "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/corebot/providers/Microsoft.Network/networkInterfaces/helpers-eastus2851",
+          "primary": null,
+          "resourceGroup": "corebot"
+        }
+      ]
+    },
+    "osProfile": null,
+    "plan": null,
+    "platformFaultDomain": null,
+    "powerState": "VM running",
+    "priority": null,
+    "privateIps": "10.0.0.8",
+    "provisioningState": "Succeeded",
+    "proximityPlacementGroup": null,
+    "publicIps": "20.1.173.99",
+    "resourceGroup": "COREBOT",
+    "resources": null,
+    "scheduledEventsProfile": null,
+    "securityProfile": null,
+    "storageProfile": {
+      "dataDisks": [],
+      "imageReference": null,
+      "osDisk": {
+        "caching": "ReadWrite",
+        "createOption": "Attach",
+        "deleteOption": "Detach",
+        "diffDiskSettings": null,
+        "diskSizeGb": 512,
+        "encryptionSettings": null,
+        "image": null,
+        "managedDisk": {
+          "diskEncryptionSet": null,
+          "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourcegroups/corebot/providers/Microsoft.Compute/disks/helpers-disk-eu2",
+          "resourceGroup": "corebot",
+          "securityProfile": null,
+          "storageAccountType": "Premium_LRS"
+        },
+        "name": "helpers-disk-eu2",
+        "osType": "Linux",
+        "vhd": null,
+        "writeAcceleratorEnabled": null
+      }
+    },
+    "tags": null,
+    "timeCreated": "2022-06-06T18:54:29.987771+00:00",
+    "type": "Microsoft.Compute/virtualMachines",
+    "userData": null,
+    "virtualMachineScaleSet": null,
+    "vmId": "c71fc53a-8bad-471d-ada8-dec24ecba760",
+    "zones": null
+  },
+  {
+    "additionalCapabilities": null,
+    "applicationProfile": null,
+    "availabilitySet": null,
+    "billingProfile": null,
+    "capacityReservation": null,
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": true,
+        "storageUri": null
+      }
+    },
+    "evictionPolicy": null,
+    "extendedLocation": null,
+    "extensionsTimeBudget": null,
+    "fqdns": "",
+    "hardwareProfile": {
+      "vmSize": "Standard_F8s_v2",
+      "vmSizeProperties": null
+    },
+    "host": null,
+    "hostGroup": null,
+    "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/COREBOT/providers/Microsoft.Compute/virtualMachines/collector2",
+    "identity": null,
+    "licenseType": "RHEL_BYOS",
+    "location": "eastus2",
+    "macAddresses": "60-45-BD-77-FE-63",
+    "name": "collector2",
+    "networkProfile": {
+      "networkApiVersion": null,
+      "networkInterfaceConfigurations": null,
+      "networkInterfaces": [
+        {
+          "deleteOption": "Detach",
+          "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/corebot/providers/Microsoft.Network/networkInterfaces/collector2687",
+          "primary": null,
+          "resourceGroup": "corebot"
+        }
+      ]
+    },
+    "osProfile": null,
+    "plan": {
+      "name": "rhel-lvm85-gen2",
+      "product": "rhel-byos",
+      "promotionCode": null,
+      "publisher": "redhat"
+    },
+    "platformFaultDomain": null,
+    "powerState": "VM running",
+    "priority": null,
+    "privateIps": "10.0.0.6",
+    "provisioningState": "Succeeded",
+    "proximityPlacementGroup": null,
+    "publicIps": "20.97.236.63",
+    "resourceGroup": "COREBOT",
+    "resources": null,
+    "scheduledEventsProfile": null,
+    "securityProfile": null,
+    "storageProfile": {
+      "dataDisks": [],
+      "imageReference": null,
+      "osDisk": {
+        "caching": "ReadWrite",
+        "createOption": "Attach",
+        "deleteOption": "Detach",
+        "diffDiskSettings": null,
+        "diskSizeGb": 128,
+        "encryptionSettings": null,
+        "image": null,
+        "managedDisk": {
+          "diskEncryptionSet": null,
+          "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/corebot/providers/Microsoft.Compute/disks/collector2",
+          "resourceGroup": "corebot",
+          "securityProfile": null,
+          "storageAccountType": "Premium_LRS"
+        },
+        "name": "collector2",
+        "osType": "Linux",
+        "vhd": null,
+        "writeAcceleratorEnabled": null
+      }
+    },
+    "tags": null,
+    "timeCreated": "2022-05-10T14:56:15.998325+00:00",
+    "type": "Microsoft.Compute/virtualMachines",
+    "userData": null,
+    "virtualMachineScaleSet": null,
+    "vmId": "cca79087-a1c3-4c77-ac1f-daf11041ac32",
+    "zones": null
+  },
+  {
+    "additionalCapabilities": null,
+    "applicationProfile": null,
+    "availabilitySet": null,
+    "billingProfile": {
+      "maxPrice": -1
+    },
+    "capacityReservation": null,
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": true,
+        "storageUri": "https://melaniediagbucket.blob.core.windows.net/"
+      }
+    },
+    "evictionPolicy": "Deallocate",
+    "extendedLocation": null,
+    "extensionsTimeBudget": null,
+    "fqdns": "",
+    "hardwareProfile": {
+      "vmSize": "Standard_F16s_v2",
+      "vmSizeProperties": null
+    },
+    "host": null,
+    "hostGroup": null,
+    "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/COREBOT/providers/Microsoft.Compute/virtualMachines/melanie-memsql2",
+    "identity": null,
+    "licenseType": null,
+    "location": "eastus2",
+    "macAddresses": "60-45-BD-80-31-20",
+    "name": "melanie-memsql2",
+    "networkProfile": {
+      "networkApiVersion": null,
+      "networkInterfaceConfigurations": null,
+      "networkInterfaces": [
+        {
+          "deleteOption": "Detach",
+          "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/corebot/providers/Microsoft.Network/networkInterfaces/melanie-memsql2119",
+          "primary": null,
+          "resourceGroup": "corebot"
+        }
+      ]
+    },
+    "osProfile": null,
+    "plan": null,
+    "platformFaultDomain": null,
+    "powerState": "VM running",
+    "priority": "Spot",
+    "privateIps": "10.0.0.4",
+    "provisioningState": "Succeeded",
+    "proximityPlacementGroup": null,
+    "publicIps": "20.122.174.209",
+    "resourceGroup": "COREBOT",
+    "resources": null,
+    "scheduledEventsProfile": null,
+    "securityProfile": null,
+    "storageProfile": {
+      "dataDisks": [],
+      "imageReference": null,
+      "osDisk": {
+        "caching": "ReadWrite",
+        "createOption": "Attach",
+        "deleteOption": "Detach",
+        "diffDiskSettings": null,
+        "diskSizeGb": 1024,
+        "encryptionSettings": null,
+        "image": null,
+        "managedDisk": {
+          "diskEncryptionSet": null,
+          "id": "/subscriptions/58e37467-fbe3-4813-93b4-63505ed2eb77/resourceGroups/corebot/providers/Microsoft.Compute/disks/memsql_disk",
+          "resourceGroup": "corebot",
+          "securityProfile": null,
+          "storageAccountType": "Premium_LRS"
+        },
+        "name": "memsql_disk",
+        "osType": "Linux",
+        "vhd": null,
+        "writeAcceleratorEnabled": null
+      }
+    },
+    "tags": null,
+    "timeCreated": "2022-05-10T10:58:25.441064+00:00",
+    "type": "Microsoft.Compute/virtualMachines",
+    "userData": null,
+    "virtualMachineScaleSet": null,
+    "vmId": "220d4e4a-fa84-4b10-aa10-2d241d72658a",
+    "zones": null
+  }
+]

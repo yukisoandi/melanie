@@ -1,0 +1,40 @@
+{
+  "x": [
+    {
+      "time": 1612031473,
+      "level": 5,
+      "roles": [],
+      "author": 781002610127011851,
+      "reason": null,
+      "duration": null,
+      "modlog_message": {
+        "channel_id": 790736016599941140,
+        "message_id": 805143108344872982
+      }
+    },
+    {
+      "time": 1612319252,
+      "level": 2,
+      "roles": [],
+      "author": 781002610127011851,
+      "reason": "check out the new gif in the warning dm",
+      "duration": 1800.0,
+      "modlog_message": {
+        "channel_id": 790736016599941140,
+        "message_id": 806350133482618891
+      }
+    },
+    {
+      "time": 1612821711,
+      "level": 5,
+      "roles": [],
+      "author": 482678978646114304,
+      "reason": "sus ab ur age",
+      "duration": null,
+      "modlog_message": {
+        "channel_id": 790736016599941140,
+        "message_id": 808457598184718436
+      }
+    }
+  ]
+}

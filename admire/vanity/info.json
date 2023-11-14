@@ -1,0 +1,8 @@
+{
+  "author": ["monty"],
+  "description": "Update and set the vanity for your level 3 server",
+  "short": "Vanity update for level 3 servers",
+  "tags": ["vanity"],
+  "type": "COG",
+  "end_user_data_statement": "NA"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Cog-Creators/Melanie-DiscordBot/V3/develop/schema/red_cog.schema.json",
+  "name": "Instagram",
+  "short": "Interaction with Instagram",
+  "description": "Query data from Instagram",
+  "end_user_data_statement": "This cog does not persistently store any data or metadata about users.",
+  "author": ["Author 1", "Author 2"],
+  "required_cogs": {},
+  "requirements": [],
+  "tags": ["tag1", "tag2", "tag3"],
+  "min_bot_version": "3.3.10",
+  "hidden": false,
+  "disabled": false,
+  "type": "COG"
+}

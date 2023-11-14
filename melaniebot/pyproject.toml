@@ -1,0 +1,191 @@
+[tool.poetry]
+authors     = ["Montel Edwards <m@monteledwards.com>"]
+description = "a premium discord bot "
+license     = "MIT  "
+name        = "melaniebot"
+readme      = "README.md"
+version     = "1.3.2"
+
+
+[tool.black]
+line-length    = 160
+target-version = ["py311"]
+
+[tool.ruff]
+fix-only                   = true
+ignore                     = ["D211", "D212", "E501", "TID"]
+ignore-init-module-imports = true
+line-length                = 160
+target-version             = "py311"
+unfixable                  = ["B", "D203", "RET", "RUF", "SIM", "TCH", "TRY", "UP"]
+
+[tool.poetry.scripts]
+melaniebot          = "melaniebot.__main__:main"
+melaniebot-launcher = "melaniebot.launcher:main"
+melaniebot-setup    = "melaniebot.setup:run_cli"
+
+
+[tool.setuptools]
+include-package-data = true
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires      = ["poetry-core"]
+
+
+[tool.poetry.dependencies]
+aiobotocore                    = "^2.6.0"
+aiofile                        = "^3.8.8"
+aiofiles                       = "^23.2.1"
+aiohttp                        = {path = "../aiohttp/wheelhouse/aiohttp-3.8.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"}
+aiohttp-json-rpc               = { url = "https://github.com/monty-dev/aiohttp-json-rpc/archive/refs/heads/master.zip" }
+aioitertools                   = ">=0.11"
+aiomisc                        = ">=17.2"
+aiopg                          = ">=1.4"
+aiosqlite                      = "^0.19.0"
+aiozipstream                   = "^0.4"
+anyascii                       = ">=0.3"
+anyio                          = "^3.6"
+appdirs                        = ">=1.4"
+apsw                           = ">=3.41"
+arrow                          = ">=1.2"
+async-cse                      = "^0.3.0"
+async-lru                      = ">=2.0"
+asyncer                        = ">=0.0"
+asyncpg                        = ">=0.27"
+asyncstdlib                    = ">=3.10"
+aws-request-signer             = ">=1.2"
+babel                          = ">=2.12"
+beartype                       = "^0.16.0"
+beautifulsoup4                 = ">=4.12"
+better-exceptions              = "^0.3.3"
+black                          = "^23.3.0"
+bokeh                          = ">=3.1"
+boltons                        = ">=23.0"
+cachetools                     = ">=5.3"
+cairosvg                       = ">=2.7"
+cashews                        = "^6.3.0"
+click                          = ">=8.1"
+coredis                        = "^4.15.1"
+cryptography                   = "^41.0.3"
+cython                         = "^3.0.3"
+dask                           = "^2023.9.3"
+datamodel-code-generator       = { extras = ["http"], version = "^0.21.3" }
+datefinder                     = "^0.7.3"
+dateparser                     = ">=1.1"
+demoji                         = "^1.1.0"
+dill                           = ">=0.3"
+discord-py                     = { git = "git@github.com:monty-dev/discord.py.git" }
+discord-webhook                = "^1.3.0"
+diskcache                      = ">=5.6"
+distributed                    = "^2023.9.3"
+distro                         = ">=1.8"
+dnspython                      = "^2.3.0"
+email-validator                = "^2.0.0.post2"
+fake-useragent                 = "^1.3.0"
+fastapi                        = "^0.103.2"
+fastapi-utils                  = "^0.2.1"
+fernet-cli                     = { url = "https://github.com/monty-dev/fernet-cli/archive/refs/heads/main.zip" }
+filetype                       = ">=1.2"
+fire                           = ">=0.5"
+fuzzywuzzy                     = ">=0.18"
+genshin                        = ">=1.5"
+gilknocker                     = "^0.4.1"
+gitpython                      = ">=3.1"
+greenlet                       = "^3.0.0"
+guardpost                      = ">=1.0"
+hashids                        = ">=1.3"
+hiredis                        = "^2.2.3"
+html5lib                       = "^1.1"
+httpx                          = { extras = ["http2", "socks"], version = "^0.25.0" }
+humanize                       = ">=4.6"
+isort                          = "^5.12.0"
+itsdangerous                   = "^2.1.2"
+jishaku                        = { git = "ssh://git@github.com/monty-dev/jishaku" }
+jupyterlab-lsp                 = "^5.0.0"
+loguru                         = ">=0.7"
+lru-dict                       = ">=1.1"
+lxml                           = ">=4.9"
+lz4                            = "^4.3.2"
+markdown2                      = ">=2.4"
+matplotlib                     = ">=3.7"
+maturin                        = "^1.3.0"
+msgpack                        = ">=1.0"
+msgspec                        = "^0.18.1"
+natural                        = "^0.2.0"
+numpy                          = '^1.26.0'
+orjson                         = "^3.9.7"
+packaging                      = ">=23.1"
+pandas                         = "2.1.1"
+parsedatetime                  = "^2.6"
+pendulum                       = "3.0.0b1"
+playwright                     = { git = "git@github.com:monty-dev/playwright.git" }
+psutil                         = ">=5.9"
+pyarrow                        = "^13.0.0"
+pycountry                      = "^22.3.5"
+pycurl                         = ">=7.45"
+pydantic                       = "<2"
+pyee                           = { git = "git@github.com:monty-dev/pyee.git" }
+pyfiglet                       = "^1.0.2"
+pyhumps                        = ">=3.8"
+pyjwt                          = ">=2.7"
+pyparsing                      = ">=3.0"
+python                         = ">=3.11,<3.13"
+python-aalib                   = ">=0.4"
+python-dateutil                = ">=2.8"
+python-jose                    = ">=3.3"
+python-levenshtein             = "^0.23.0"
+python-magic                   = "^0.4.27"
+pytz                           = "^2023.3"
+pyvips                         = ">=2.2"
+pyyaml                         = ">=6.0"
+rapidfuzz                      = "^3.3.1"
+red-lavalink                   = { git = "git@github.com:monty-dev/red-lavalink.git" }
+redis                          = "^5.0.0"
+regex                          = ">=2023.5"
+requests                       = ">=2.30"
+rich                           = "^13.5.1"
+roblox                         = { git = "ssh://git@github.com/monty-dev/ro.py" }
+ruff                           = "^0.0.292"
+scdl                           = "^2.7.3"
+schema                         = ">=0.7"
+setproctitle                   = "^1.3.2"
+sh                             = ">=2.0"
+shortuuid                      = ">=1.0"
+simple-term-menu               = "^1.6.1"
+soundcloud-v2                  = ">=1.3"
+sourcery-cli                   = "^1.10.1"
+stackprinter                   = ">=0.2"
+starlette                      = ">=0.26"
+tabulate                       = ">=0.9"
+tagscript                      = { git = "ssh://git@github.com/monty-dev/TagScript" }
+tair                           = "^1.3.4"
+tekore                         = "^5.1.0"
+thefuzz                        = "^0.20.0"
+tldextract                     = "^5.0.0"
+tomli-w                        = "^1.0.0"
+toolz                          = ">=0.12"
+tornado                        = ">6"
+trio                           = "^0.22.2"
+tuuid                          = ">=1.0"
+tweepy                         = "4.12.1"
+twisted                        = "^23.8.0"
+types-aiobotocore-s3           = "^2.6.0"
+typing-extensions              = ">=4.5"
+tzlocal                        = "^5.0.1"
+ujson                          = ">=5.7"
+unidecode                      = ">=1.3"
+uvicorn                        = "^0.23.2"
+uvloop                         = { git = "https://github.com/monty-dev/uvloop.git" }
+uwupy                          = { git = "git@github.com:monty-dev/uwupy.git" }
+wand                           = ">=0.6"
+websockets                     = "^11.0.3"
+wsproto                        = "^1.2.0"
+xxhash                         = ">=3.2"
+yt-dlp                         = "^2023.9.24"
+zstandard                      = "^0.21.0"
+pillow = {git = "https://github.com/monty-dev/pillow-simd.git"}
+jupyterlab-code-formatter = "^2.2.1"
+opencv-contrib-python-headless = "^4.8.1.78"
+httptools = "^0.6.0"
+mypy = "^1.6.0"

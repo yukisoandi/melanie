@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "workflows_westus_name": {
+      "value": null
+    },
+    "workflows_uksouth_name": {
+      "value": null
+    },
+    "workflows_westus2_name": {
+      "value": null
+    },
+    "workflows_westus3_name": {
+      "value": null
+    },
+    "workflows_uaenorth_name": {
+      "value": null
+    },
+    "workflows_norwayeast_name": {
+      "value": null
+    },
+    "workflows_norwaywest_name": {
+      "value": null
+    },
+    "workflows_uaecentral_name": {
+      "value": null
+    },
+    "workflows_vanitycheck_name": {
+      "value": null
+    },
+    "workflows_northcentralus_name": {
+      "value": null
+    },
+    "workflows_southafricawest_name": {
+      "value": null
+    },
+    "workflows_vanitycheck_eus_name": {
+      "value": null
+    },
+    "workflows_switzerlandnorth_name": {
+      "value": null
+    }
+  }
+}

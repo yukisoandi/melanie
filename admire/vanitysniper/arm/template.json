@@ -1,0 +1,890 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "workflows_westus_name": {
+      "defaultValue": "westus",
+      "type": "String"
+    },
+    "workflows_uksouth_name": {
+      "defaultValue": "uksouth",
+      "type": "String"
+    },
+    "workflows_westus2_name": {
+      "defaultValue": "westus2",
+      "type": "String"
+    },
+    "workflows_westus3_name": {
+      "defaultValue": "westus3",
+      "type": "String"
+    },
+    "workflows_uaenorth_name": {
+      "defaultValue": "uaenorth",
+      "type": "String"
+    },
+    "workflows_norwayeast_name": {
+      "defaultValue": "norwayeast",
+      "type": "String"
+    },
+    "workflows_norwaywest_name": {
+      "defaultValue": "norwaywest",
+      "type": "String"
+    },
+    "workflows_uaecentral_name": {
+      "defaultValue": "uaecentral",
+      "type": "String"
+    },
+    "workflows_vanitycheck_name": {
+      "defaultValue": "vanitycheck",
+      "type": "String"
+    },
+    "workflows_northcentralus_name": {
+      "defaultValue": "northcentralus",
+      "type": "String"
+    },
+    "workflows_southafricawest_name": {
+      "defaultValue": "southafricawest",
+      "type": "String"
+    },
+    "workflows_vanitycheck_eus_name": {
+      "defaultValue": "vanitycheck_eus",
+      "type": "String"
+    },
+    "workflows_switzerlandnorth_name": {
+      "defaultValue": "switzerlandnorth",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_northcentralus_name')]",
+      "location": "northcentralus",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_norwayeast_name')]",
+      "location": "norwayeast",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_norwaywest_name')]",
+      "location": "norwaywest",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_southafricawest_name')]",
+      "location": "southafricawest",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_switzerlandnorth_name')]",
+      "location": "switzerlandnorth",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_uaecentral_name')]",
+      "location": "uaecentral",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_uaenorth_name')]",
+      "location": "uaenorth",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_uksouth_name')]",
+      "location": "uksouth",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_vanitycheck_name')]",
+      "location": "eastus2",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_vanitycheck_eus_name')]",
+      "location": "eastus",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_westus_name')]",
+      "location": "westus",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_westus2_name')]",
+      "location": "westus2",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/@{triggerBody()?['code']}?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', variables('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_westus3_name')]",
+      "location": "westus3",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "method": "GET",
+                "relativePath": "/code/{code}"
+              }
+            }
+          },
+          "actions": {
+            "HTTP": {
+              "runAfter": {},
+              "limit": {
+                "timeout": "PT1S"
+              },
+              "type": "Http",
+              "inputs": {
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "method": "GET",
+                "retryPolicy": {
+                  "type": "none"
+                },
+                "uri": "https://discord.com/api/v9/invites/?with_counts=true&with_expiration=true"
+              }
+            },
+            "Response": {
+              "runAfter": {
+                "HTTP": ["Succeeded", "TimedOut", "Skipped", "Failed"]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "body": "@body('HTTP')",
+                "statusCode": "@outputs('HTTP')['statusCode']"
+              }
+            }
+          },
+          "outputs": {
+            "logicAppUrl": {
+              "type": "string",
+              "value": "[listCallbackURL(concat(resourceId('Microsoft.Logic/workflows/', parameters('logicAppName')), '/triggers/request'), '2016-06-01').value]"
+            }
+          }
+        },
+        "parameters": {}
+      }
+    }
+  ]
+}

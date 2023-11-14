@@ -1,0 +1,11 @@
+[tool.black]
+line-length = 160
+target-version = ["py311"]
+
+[tool.ruff]
+fix-only = true
+ignore = ["D211", "D212", "E501", "TID"]
+ignore-init-module-imports = true
+line-length = 160
+target-version = "py311"
+unfixable = ["B", "D203", "RET", "RUF", "SIM", "TCH", "TRY", "UP"]

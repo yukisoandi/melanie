@@ -1,0 +1,8 @@
+{
+  "author": ["monty"],
+  "description": "Update and set the vanity for your level 3 server",
+  "short": "Work",
+  "tags": ["worker"],
+  "type": "COG",
+  "end_user_data_statement": "NA"
+}

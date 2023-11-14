@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Cog-Creators/Melanie-DiscordBot/V3/develop/schema/red_cog.schema.json",
+  "name": "AntiNuke",
+  "short": "antinuke",
+  "description": "A long description of the cog.",
+  "end_user_data_statement": "This cog does not persistently store any data or metadata about users.",
+  "author": ["Montel"],
+  "required_cogs": {},
+  "requirements": [],
+  "tags": ["tag1", "tag2", "tag3"],
+  "min_bot_version": "3.3.10",
+  "hidden": false,
+  "disabled": false,
+  "type": "COG"
+}

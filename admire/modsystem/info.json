@@ -1,0 +1,14 @@
+{
+  "author": ["monty"],
+  "bot_version": [3, 2, 0],
+  "description": "melanie moderation system",
+  "hidden": false,
+  "install_msg": "modsystem",
+  "required_cogs": {},
+  "requirements": [
+    "python-dateutil",
+    "git+https://github.com/retke/Laggron-utils.git"
+  ],
+  "short": "mod",
+  "tags": ["warn", "warning", "bettermod", "punish", "modlog"]
+}

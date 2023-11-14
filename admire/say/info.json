@@ -1,0 +1,11 @@
+{
+  "author": ["retke (El Laggron)"],
+  "bot_version": [3, 0, 0],
+  "description": "Speak as the bot through multiple options.\nAllow file upload, rift in DM and specific destinations.",
+  "hidden": false,
+  "install_msg": "Thank you for installing the say cog. Please check the wiki for all informations about the cog.\nhttps://laggrons-dumb-cogs.readthedocs.io/say.html\n\nType `;help Say` for a quick overview of the commands.",
+  "required_cogs": {},
+  "requirements": ["git+https://github.com/retke/laggron-utils"],
+  "short": "Speak as the bot through multiple options.",
+  "tags": ["rift", "upload", "interact"]
+}

@@ -1,0 +1,180 @@
+from typing import List, Optional, Tuple, Union
+
+import discord
+from aiomisc.backoff import asyncretry
+from discord import Client, Message, TextChannel, User
+from discord.ext.commands import Context
+
+from .abc import Dialog
+
+
+class MultipleChoice(Dialog):
+    """Generate and manage a reaction controlled rich embed multiple choice poll
+    in Discord.
+
+    :param title: Embed title.
+    :type title: :class:`str`
+
+    :param description: Embed description.
+    :type description: :class:`str`
+
+    :param options: Options to choose from. Each option is going to be a separate embed
+        field.
+    :type options: list[:class:`str`]
+
+    """
+
+    def __init__(self, client: Client, options: List[str], title: str, description: str = "", **kwargs) -> None:
+        super().__init__(**kwargs)
+
+        self._client: Client = client
+        self.options: List[str] = options
+        self.title: str = title
+        self.description: str = description
+
+        self.message: Optional[Message] = None
+        self._parse_kwargs(**kwargs)
+
+        self._embed: Optional[discord.Embed] = None
+        self._emojis: List[str] = []
+
+        self.close_emoji = "❌"
+
+        self._choice = None
+
+    def _parse_kwargs(self, **kwargs) -> None:
+        self.message: Message = kwargs.get("message") or kwargs.get("msg") or self.message
+
+    def _generate_emojis(self) -> List[str]:
+        self._emojis.clear()
+
+        for i in range(len(self.options)):
+            if len(self.options) > 10:
+                hex_str = hex(224 + (6 + i))[2:]
+                emoji = b"\\U0001f1a".replace(b"a", bytes(hex_str, "utf-8"))
+                emoji = emoji.decode("unicode-escape")
+            else:
+                emoji = "x\u20e3".replace("x", str(i + 1)) if i < 9 else "\U0001f51f"
+            self._emojis.append(emoji)
+
+        return self._emojis
+
+    def _generate_embed(self) -> discord.Embed:
+        config_embed = discord.Embed(title=self.title, description=self.description, color=self.color)
+
+        emojis = self._generate_emojis()
+
+        for i in range(len(self.options)):
+            config_embed.add_field(name=emojis[i], value=self.options[i], inline=False)
+
+        self._embed = config_embed
+        return config_embed
+
+    @property
+    def embed(self) -> discord.Embed:
+        """The generated embed."""
+        if self._embed is None:
+            self._generate_embed()
+
+        return self._embed
+
+    @property
+    def choice(self) -> str:
+        """The option that the user chose."""
+        return self._choice
+
+    async def run(self, users: Union[User, List[User]] = None, channel: TextChannel = None, **kwargs) -> Tuple[Optional[str], Message]:
+        """Run the multiple choice dialog.
+
+        :param users: Users that can use the reactions (default: `None`).
+            If this is ``None``: Any user can interact.
+
+        :type users: list[:class:`discord.User`]
+
+        :param channel: The channel to send the message to.
+        :type channel: :class:`discord.TextChannel`, optional
+
+        :param kwargs:
+            - message :class:`discord.Message`
+            - timeout :class:`int` (seconds, default: ``60``),
+            - closable :class:`bool` (default: ``True``)
+            - text :class:`str`: Text to appear in the message.
+            - timeout_msg :class:`str`: Text to appear when dialog times out.
+            - quit_msg :class:`str`: Text to appear when user quits the dialog.
+
+        :return: selected option and used :class:`discord.Message`
+        :rtype: tuple[:class:`str`, :class:`discord.Message`]
+
+        """
+        if type(users) == User:
+            users = [users]
+
+        self._parse_kwargs(**kwargs)
+        timeout = kwargs.get("timeout", 60)
+        closable: bool = kwargs.get("closable", True)
+
+        publish_kwargs = {"embed": self.embed}
+        if "text" in kwargs:
+            publish_kwargs["content"] = kwargs["text"]
+
+        await self._publish(channel, **publish_kwargs)
+
+        @asyncretry(max_tries=3, pause=0.1)
+        async def add_reaction(emoji):
+            await self.message.add_reaction(emoji)
+
+        for emoji in self._emojis:
+            await add_reaction(emoji)
+
+        if closable:
+            await add_reaction(self.close_emoji)
+
+        def check(r: discord.RawReactionActionEvent):
+            res = (r.message_id == self.message.id) and r.user_id != self._client.user.id
+
+            if users is not None:
+                res = res and (r.user_id in [_u.id for _u in users])
+
+            is_valid_emoji = str(r.emoji) in self._emojis
+            if closable:
+                is_valid_emoji = is_valid_emoji or str(r.emoji) == self.close_emoji
+
+            res = res and is_valid_emoji
+
+            return res
+
+        try:
+            reaction = await self._client.wait_for("raw_reaction_add", check=check, timeout=timeout)
+        except TimeoutError:
+            self._choice = None
+            if "timeout_msg" in kwargs:
+                await self.quit(kwargs["timeout_msg"])
+            return None, self.message
+
+        if str(reaction.emoji) == self.close_emoji:
+            self._choice = None
+            if "quit_msg" in kwargs:
+                await self.quit(kwargs["quit_msg"])
+            return None, self.message
+
+        index = self._emojis.index(str(reaction.emoji))
+        self._choice = self.options[index]
+
+        return self._choice, self.message
+
+
+class BotMultipleChoice(MultipleChoice):
+    """Same as :class:`MultipleChoice`, except for the discord.py commands
+    extension.
+    """
+
+    def __init__(self, ctx: Context, options: list, title: str, description: str = "", **kwargs) -> None:
+        super().__init__(ctx.bot, options, title, description, **kwargs)
+
+        self._ctx = ctx
+
+    async def run(self, users: Union[User, List[User]] = None, channel: TextChannel = None, **kwargs) -> Tuple[Optional[str], Message]:
+        if self.message is None and channel is None:
+            channel = self._ctx.channel
+
+        return await super().run(users, channel, **kwargs)

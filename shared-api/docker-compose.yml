@@ -1,0 +1,23 @@
+services:
+  chrome:
+    container_name: chrome
+    depends_on:
+      - warp
+    env_file:
+      - ./docker-chrome-env.env
+    image: browserless/chrome:1.60-chrome-stable
+    ports:
+      - "3000:3000"
+    restart: always
+    tmpfs:
+      - /chrome
+      - /tmp
+
+  warp:
+    container_name: warp
+    image: aleskxyz/warp-svc:latest
+    ports:
+      - "1080:1080"
+    restart: always
+    volumes:
+      - /home/melanie/shared-api/warpdata:/var/lib/cloudflare-warp

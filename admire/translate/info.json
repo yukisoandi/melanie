@@ -1,0 +1,18 @@
+{
+  "author": ["Monty", "TrustyJAID"],
+  "description": "Add flag emojis to messages to translate to that language or translate messages by command.",
+  "disabled": false,
+  "end_user_data_statement": "This cog does not persistently store data or metadata about users. However, this cog does pass user data to an external API for the purposes of analyzing and translating languages.",
+  "hidden": false,
+  "install_msg": "",
+  "max_bot_version": "0.0.0",
+  "min_bot_version": "3.1.8",
+  "min_python_version": [3, 7, 2],
+  "name": "Translate",
+  "permissions": [],
+  "required_cogs": {},
+  "requirements": [],
+  "short": "Translate messages using google translate!",
+  "tags": ["utility", "translation"],
+  "type": "COG"
+}

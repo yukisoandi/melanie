@@ -1,0 +1,12 @@
+{
+  "author": ["monty"],
+
+  "name": "modtoolkit",
+  "disabled": false,
+  "short": "Special, dangerous, and hidden cog that can be used to automate things in your server",
+  "description": "Special, dangerous, and hidden cog that can be used to automate things in your server ",
+  "tags": [""],
+  "hidden": false,
+  "min_bot_version": "3.4.0",
+  "end_user_data_statement": "This cog does not persistently store data or metadata about users."
+}

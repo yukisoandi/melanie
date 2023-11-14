@@ -1,0 +1,14 @@
+[
+  "https://prod-15.northcentralus.logic.azure.com:443/workflows/1ad6bb6f7f5a407290e2946fd4c56a59/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=CFvMuLKuNUWH9t0aF0bT_NJNt27SdIwNIfizLZy9gu0",
+  "https://prod-31.norwayeast.logic.azure.com:443/workflows/deea35dc38884d188a06411d7dae9ff8/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=L1-nF8ghhMHYufz2T5vkGqwPNxuMzgOtkUWZCqZM4YI",
+  "https://prod-05.norwaywest.logic.azure.com:443/workflows/c9f8fcd02c234b0d8b99a5563ddce762/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=9B48iCEYo8OrP0rxZFvDMOpnyq8ieb0V9AJOiSNfwEw",
+  "https://prod-06.southafricawest.logic.azure.com:443/workflows/2a7208ac551b406880c1938eb760643a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=L3K5mUIrrZh6J6M2fIMbA6XtEG8xy5taMtsYdZVjH-4",
+  "https://prod-07.switzerlandnorth.logic.azure.com:443/workflows/45feab6b7d77409fb28dc27fa8e3f788/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=u3EFZkYkcxKVLtWYy2J5LD_SND3MrR7EMyIdvSb0pQM",
+  "https://prod-13.uaecentral.logic.azure.com:443/workflows/3ada83ed14ec44a0ad348856badd7625/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=OTr9OhAGDhJttkTJdlUmckkAjs7l6RY42VKAHZrxI7M",
+  "https://prod-00.uaenorth.logic.azure.com:443/workflows/e394048efb564df387e9675d3c509565/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Ib_v8BGMbA1lx4sIeQEfJHBDlJza25kvwbrjxE5dC64",
+  "https://prod-22.uksouth.logic.azure.com:443/workflows/61d50105f3674e4ba3462a332b265871/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=0xYmeOzxsk2xNXXAPn8FBwYHG9GSW0gqFDwIoPtZ1QI",
+  "https://prod-13.eastus2.logic.azure.com:443/workflows/a9e9f17090a5445692f9ee514391a7b7/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=a3P3vmKfbWy7G10onj7xKKqi_WaQ9_FyUfRvkhEgIjw",
+  "https://prod-34.eastus.logic.azure.com:443/workflows/82c68c5907ae4f49b0d7807adef52c52/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8OiLUiHkVdy4_PqagVQdg_TJ8DJwtoH2_RrLsGgsvZg",
+  "https://prod-74.westus.logic.azure.com:443/workflows/73ed0d2ff9df436e8842a24f886f4483/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=hnif8bL0KSeK6UsKJaMg2QyoFQSxPuPIn4k7nrWHWQA",
+  "https://prod-05.westus2.logic.azure.com:443/workflows/d926c3b9b7de422e8e3347054434e663/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=awFzlC955UUB3WgoPpJ2XKHVi4DWTqcr9J26CFpdngs"
+]

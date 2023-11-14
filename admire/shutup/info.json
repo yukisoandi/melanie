@@ -1,0 +1,11 @@
+{
+  "author": ["monty"],
+  "name": "shutup",
+  "disabled": false,
+  "short": "listen for tiktoks, download and repost them!",
+  "description": "Delete's a user's messages immediately as they're sent. A more fun alternative than muting",
+  "tags": ["deleter"],
+  "hidden": false,
+  "min_bot_version": "3.4.0",
+  "end_user_data_statement": "This cog does not persistently store data or metadata about users."
+}

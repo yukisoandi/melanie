@@ -1,0 +1,81 @@
+{
+  "id": "nwsg7gc4i0v81",
+  "title": "Michael Jordan giving his teammate the \"Is this guy for real?\" look before schooling him.",
+  "timestamp": 1650603593.0,
+  "direct": true,
+  "url": "https://i.redd.it/nwsg7gc4i0v81.gif",
+  "original_url": "https://www.reddit.com/r/sports/comments/u96npg/michael_jordan_giving_his_teammate_the_is_this/",
+  "webpage_url": "https://www.reddit.com/r/sports/comments/u96npg/michael_jordan_giving_his_teammate_the_is_this/",
+  "webpage_url_basename": "michael_jordan_giving_his_teammate_the_is_this",
+  "webpage_url_domain": "reddit.com",
+  "extractor": "generic",
+  "extractor_key": "Generic",
+  "thumbnails": [
+    {
+      "url": "https://preview.redd.it/nwsg7gc4i0v81.gif?width=108&crop=smart&format=png8&s=65bdee549a6279c2dc8c97beeed0425b2a1602e0",
+      "width": 108,
+      "height": 60,
+      "id": "0",
+      "resolution": "108x60"
+    },
+    {
+      "url": "https://preview.redd.it/nwsg7gc4i0v81.gif?width=216&crop=smart&format=png8&s=ac1bcc986157bd1ca8ceb691965e9299dc5826b4",
+      "width": 216,
+      "height": 121,
+      "id": "1",
+      "resolution": "216x121"
+    },
+    {
+      "url": "https://preview.redd.it/nwsg7gc4i0v81.gif?width=320&crop=smart&format=png8&s=d93c6a85ff02b96e499cc4d348460bcf3f721aef",
+      "width": 320,
+      "height": 180,
+      "id": "2",
+      "resolution": "320x180"
+    },
+    {
+      "url": "https://preview.redd.it/nwsg7gc4i0v81.gif?format=png8&s=1051d702b26ad0966be20a86d631b8b7d13a78a6",
+      "width": 520,
+      "height": 293,
+      "id": "3",
+      "resolution": "520x293"
+    }
+  ],
+  "uploader": "ccrepitation",
+  "like_count": 24710,
+  "dislike_count": 0,
+  "comment_count": 1080,
+  "age_limit": 0,
+  "display_id": "u96npg",
+  "playlist": null,
+  "playlist_index": null,
+  "thumbnail": "https://preview.redd.it/nwsg7gc4i0v81.gif?format=png8&s=1051d702b26ad0966be20a86d631b8b7d13a78a6",
+  "fulltitle": "Michael Jordan giving his teammate the \"Is this guy for real?\" look before schooling him.",
+  "upload_date": "20220422",
+  "requested_subtitles": null,
+  "__has_drm": false,
+  "format_id": "0",
+  "ext": "gif",
+  "format": "0 - unknown",
+  "protocol": "https",
+  "resolution": null,
+  "dynamic_range": "SDR",
+  "http_headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-us,en;q=0.5",
+    "Sec-Fetch-Mode": "navigate"
+  },
+  "requested_downloads": [
+    {
+      "ext": "mp4",
+      "format": "mp4",
+      "epoch": 1650682446,
+      "_filename": "/Users/m/Code/lab/tmp/Michael_Jordan_giving_his_teammate_the_Is_this_guy_for_real_look_before_schooling_him..gif",
+      "__postprocessors": [],
+      "__real_download": true,
+      "__finaldir": "/Users/m/Code/lab/tmp",
+      "filepath": "/Users/m/Code/lab/tmp/Michael_Jordan_giving_his_teammate_the_Is_this_guy_for_real_look_before_schooling_him..mp4",
+      "__write_download_archive": true
+    }
+  ]
+}
